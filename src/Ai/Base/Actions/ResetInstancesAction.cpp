@@ -12,7 +12,7 @@
 bool ResetInstancesAction::Execute(Event event)
 {
     WorldPacket packet(CMSG_RESET_INSTANCES, 0);
-    WorldPackets::Instance::ResetInstance resetInstance(std::move(packet));
+    WorldPackets::Instance::ResetInstances resetInstance(std::move(packet));
     bot->GetSession()->HandleResetInstancesOpcode(resetInstance);
 
     botAI->TellMaster("Resetting all instances");
